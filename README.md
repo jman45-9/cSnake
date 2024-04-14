@@ -40,7 +40,7 @@ sudo dnf install ncurses-devel
 3. Navigate into the build directory
 4. run the following commands
 ```
-cmake PATH\_TO\_PROJECT\_DIRECTORY
+cmake PATH_TO_PROJECT_DIRECTORY
 ```
 ```
 cmake --build .
