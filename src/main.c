@@ -1,8 +1,11 @@
 #include "main.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-        printf("Hello, World!\n"); 
-        printf("Version: %d.%d.%d\n", cSnake_VERSION_MAJOR, cSnake_VERSION_MINOR, cSnake_VERSION_MINOR);
+        if (argc > 1 && !strcmp(*(argv+1), "--version"))
+        {
+                printf("Version: %d.%d.%d\n", cSnake_VERSION_MAJOR, cSnake_VERSION_MINOR, cSnake_VERSION_MINOR);
+                return 0;
+        }
         return 0;
 }

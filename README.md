@@ -2,6 +2,22 @@
 
 This is a classic snake game written in C with ncurces.
 
+## Command line usage
+
+To start the program run
+
+```
+./cSnake
+```
+
+To print the current version run
+
+```
+./cSnake --version
+```
+
+
+
 
 ## Installing nCurses
 
