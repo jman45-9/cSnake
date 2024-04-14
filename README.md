@@ -8,5 +8,5 @@ This is a classic snake game written in C with ncurces.
 2. Create a directory to place the build in
 3. Navigate into that directory
 4. run the following command
-    cmake PATH\_TO\_PROJECT\_DIRECTORY 
-5. 
+    cmake PATH\_TO\_PROJECT\_DIRECTORY
+5. run cmake --build .
