@@ -1,0 +1,10 @@
+
+#ifndef CSNAKE_CONFIG_HEADER_H
+#define CSNAKE_CONFIG_HEADER_H
+
+#define cSnake_VERSION @cSnake_VERSION@
+#define cSnake_VERSION_MAJOR @cSnake_VERSION_MAJOR@
+#define cSnake_VERSION_MINOR @cSnake_VERSION_MINOR@
+#define cSnake_VERSION_PATCH @cSnake_VERSION_PATCH@
+
+#endif /* CSNAKE_CONFIG_HEADER_H */
