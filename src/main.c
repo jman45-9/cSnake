@@ -11,7 +11,7 @@ int main(int argc, char **argv)
         initscr();
 
         //screen config
-        if(nodelay(stdscr, FALSE) == ERR) {
+        if(nodelay(stdscr, TRUE) == ERR) {
                 printf("FATAL ERR. NO DELAY INIT FAILED. EXITING...");
                 endwin();
                 return 1;
