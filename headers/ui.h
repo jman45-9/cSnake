@@ -1,0 +1,4 @@
+#ifndef CSNAKE_UI_HEADER_H
+#define CSNAKE_UI_HEADER_H
+
+#endif /* CSNAKE_UI_HEADER_H */
