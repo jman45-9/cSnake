@@ -19,6 +19,8 @@ int main(int argc, char **argv)
         noecho();
         keypad(stdscr, TRUE);
 
+        makeBorder();
+
         // Normal Control Loop
         while (1) {
                 switch (getch())

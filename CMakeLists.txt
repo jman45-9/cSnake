@@ -13,8 +13,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 find_package( Curses REQUIRED )
 include_directories( ${CURSES_INCLUDE_DIRS} )
 
-set(SOURCE_FILES src/main.c)
-add_executable(cSnake ${SOURCE_FILES})
+add_executable(cSnake src/main.c src/ui.c)
 
 target_link_libraries( cSnake ${CURSES_LIBRARIES} )
 
