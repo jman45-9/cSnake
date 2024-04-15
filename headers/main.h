@@ -4,7 +4,9 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <string.h>
+
 #include "cSnakeConfig.h"
+#include "ui.h"
 
 #endif /* CSNAKE_MAIN_HEADER_H */
 
