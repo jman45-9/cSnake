@@ -8,25 +8,39 @@ int main(int argc, char **argv)
                 return 0;
         }
 
-        char testch = '*';
-
         initscr();
 
         //screen config
-        if(nodelay(stdscr, TRUE) == ERR) {
+        if(nodelay(stdscr, FALSE) == ERR) {
                 printf("FATAL ERR. NO DELAY INIT FAILED. EXITING...");
                 endwin();
                 return 1;
         }
         noecho();
+        keypad(stdscr, TRUE);
 
         // Normal Control Loop
         while (1) {
-                addch(testch);
-                if (getch() == 'q')
+                switch (getch())
+                {
+                //down arrow pressed
+                case 258:
+                //up arrow pressed
+                case 259:
+                //left arrow pressed
+                case 260:
+                //right arrow pressed
+                case 261:
                         break;
+
+                case 'q':
+                        goto exit_success;
+                        
+                }
+
                 refresh();
         }
+exit_success:
         endwin();
         return 0;
 }
