@@ -9,9 +9,9 @@ int main(int argc, char **argv)
                 return 0;
         }
 
-        initscr();
 
-        //screen config
+        //ncurses config
+        initscr();
         if(nodelay(stdscr, TRUE) == ERR) {
                 printf("FATAL ERR. NO DELAY INIT FAILED. EXITING...");
                 endwin();
@@ -19,6 +19,7 @@ int main(int argc, char **argv)
         }
         noecho();
         keypad(stdscr, TRUE);
+        curs_set(0);
 
 
         struct snake *playerSnake = createNewSnake();
