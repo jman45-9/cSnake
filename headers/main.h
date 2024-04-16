@@ -7,6 +7,7 @@
 
 #include "cSnakeConfig.h"
 #include "ui.h"
+#include "snake.h"
 
 #endif /* CSNAKE_MAIN_HEADER_H */
 

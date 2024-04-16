@@ -19,10 +19,13 @@ int main(int argc, char **argv)
         noecho();
         keypad(stdscr, TRUE);
 
+        struct snake *playerSnake = createNewSnake();
+
         makeBorder();
 
         // Normal Control Loop
         while (1) {
+                printSnake(playerSnake);
                 switch (getch())
                 {
                 //down arrow pressed
@@ -43,6 +46,7 @@ int main(int argc, char **argv)
                 refresh();
         }
 exit_success:
+        //delSnake(playerSnake);
         endwin();
         return 0;
 }

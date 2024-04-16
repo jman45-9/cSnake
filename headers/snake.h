@@ -1,11 +1,18 @@
 #ifndef CSNAKE_SNAKESTRUCT_HEADER_H
 #define CSNAKE_SNAKESTRUCT_HEADER_H
 
-#include "../cDynamPointArr/dynamPointArr.h"
+#include <stdlib.h>
+#include <ncurses.h>
+
+
+#define SNAKE_START_LEN 4
 
 struct snake {
-        struct dynamPointArr *body;
-        struct point head;
+        struct dynamPntArr *body;
 };
+
+struct snake *createNewSnake();
+void printSnake(struct snake *playerSnake);
+void delSnake(struct snake *playerSnake);
 
 #endif /* CSNAKE_SNAKESTRUCT_HEADER_H */
