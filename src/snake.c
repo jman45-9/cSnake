@@ -4,10 +4,13 @@ struct snake *createNewSnake()
 {
         struct snake *newSnake = malloc(sizeof(struct snake));
         newSnake->bodyArray = malloc(sizeof(struct point));
-        struct point test = {20,20};
-        *(newSnake->bodyArray) = test;
+        struct point start = {20,20};
+        *(newSnake->bodyArray) = start;
         newSnake->bodyLen++;
-        addSegment(newSnake);
+
+        for(int iii = 0; iii < SNAKE_START_LEN - 1; iii++) {
+                addSegment(newSnake);
+        }
         return newSnake;
 }
 

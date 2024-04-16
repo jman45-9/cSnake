@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
         
         struct snake *playerSnake = createNewSnake();
-        struct point test = *((playerSnake->bodyArray)+1);
+        struct point test = *((playerSnake->bodyArray)+3);
         printf("%d,%d\n", test.x, test.y);
         delSnake(playerSnake);
 
