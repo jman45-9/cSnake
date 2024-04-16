@@ -8,7 +8,7 @@ set(CMAKE_C_EXTENSIONS ON)
 
 configure_file(cSnakeConfig.h.in cSnakeConfig.h)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 
 find_package( Curses REQUIRED )
 include_directories( ${CURSES_INCLUDE_DIRS} )
