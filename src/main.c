@@ -2,15 +2,16 @@
 
 int main(int argc, char **argv)
 {
+        
         if (argc > 1 && !strcmp(*(argv+1), "--version"))
         {
                 printf("Version: %d.%d.%d\n", cSnake_VERSION_MAJOR, cSnake_VERSION_MINOR, cSnake_VERSION_MINOR);
                 return 0;
         }
 
-        initscr();
 
-        //screen config
+        //ncurses config
+        initscr();
         if(nodelay(stdscr, TRUE) == ERR) {
                 printf("FATAL ERR. NO DELAY INIT FAILED. EXITING...");
                 endwin();
@@ -18,11 +19,15 @@ int main(int argc, char **argv)
         }
         noecho();
         keypad(stdscr, TRUE);
+        curs_set(0);
 
+
+        struct snake *playerSnake = createNewSnake();
         makeBorder();
 
         // Normal Control Loop
         while (1) {
+                printSnake(playerSnake);
                 switch (getch())
                 {
                 //down arrow pressed
@@ -43,6 +48,7 @@ int main(int argc, char **argv)
                 refresh();
         }
 exit_success:
+        delSnake(playerSnake);
         endwin();
         return 0;
 }
