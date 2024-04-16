@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-        
+
         if (argc > 1 && !strcmp(*(argv+1), "--version"))
         {
                 printf("Version: %d.%d.%d\n", cSnake_VERSION_MAJOR, cSnake_VERSION_MINOR, cSnake_VERSION_MINOR);
@@ -20,9 +20,10 @@ int main(int argc, char **argv)
         noecho();
         keypad(stdscr, TRUE);
         curs_set(0);
-
-
+        
         struct snake *playerSnake = createNewSnake();
+        printf("vel: %d\n", (*(playerSnake->bodyVel+2)).x);
+        goto exit_success;
         makeBorder();
 
         // Normal Control Loop
