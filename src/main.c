@@ -22,8 +22,7 @@ int main(int argc, char **argv)
         curs_set(0);
         
         struct snake *playerSnake = createNewSnake();
-        printf("vel: %d\n", (*(playerSnake->bodyVel+2)).x);
-        goto exit_success;
+
         makeBorder();
 
         // Normal Control Loop
