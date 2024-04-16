@@ -8,7 +8,10 @@ set(CMAKE_C_EXTENSIONS ON)
 
 configure_file(cSnakeConfig.h.in cSnakeConfig.h)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+set(CMAKE_C_FLAGS "-Wall -Wextra")
+if (CMAKE_BUILD_TYPE MATCHES "Debug")
+        set(CMAKE_C_FLAGS "-Wall -Wextra -g")
+endif()
 
 find_package( Curses REQUIRED )
 include_directories( ${CURSES_INCLUDE_DIRS} )
