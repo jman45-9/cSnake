@@ -3,13 +3,6 @@
 int main(int argc, char **argv)
 {
         
-        struct snake *playerSnake = createNewSnake();
-        struct point test = *((playerSnake->bodyArray)+3);
-        printf("%d,%d\n", test.x, test.y);
-        delSnake(playerSnake);
-
-        return 0;
-
         if (argc > 1 && !strcmp(*(argv+1), "--version"))
         {
                 printf("Version: %d.%d.%d\n", cSnake_VERSION_MAJOR, cSnake_VERSION_MINOR, cSnake_VERSION_MINOR);
@@ -28,6 +21,7 @@ int main(int argc, char **argv)
         keypad(stdscr, TRUE);
 
 
+        struct snake *playerSnake = createNewSnake();
         makeBorder();
 
         // Normal Control Loop
@@ -53,7 +47,7 @@ int main(int argc, char **argv)
                 refresh();
         }
 exit_success:
-        //delSnake(playerSnake);
+        delSnake(playerSnake);
         endwin();
         return 0;
 }

@@ -28,6 +28,12 @@ void addSegment(struct snake *playerSnake)
 
 void printSnake(struct snake *playerSnake)
 {
+        const char snakeBodyChar = '*';
+        struct point curPoint;
+        for (int iii = 0; iii < playerSnake->bodyLen; iii++) {
+                curPoint = *(playerSnake->bodyArray + iii);
+                mvaddch(curPoint.y, curPoint.x, snakeBodyChar);
+        }
 }
 
 void delSnake(struct snake *playerSnake)
