@@ -4,6 +4,7 @@ struct snake *createNewSnake()
 {
         struct snake *newSnake = malloc(sizeof(struct snake));
         newSnake->bodyArray = malloc(sizeof(struct point));
+        newSnake->bodyLen = 0;
         struct point start = {20,20};
         *(newSnake->bodyArray) = start;
         newSnake->bodyLen++;
