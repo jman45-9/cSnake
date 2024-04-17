@@ -1,5 +1,14 @@
 #include "../headers/main.h"
 
+enum {
+        DOWN = 258,
+        UP = 259,
+        LEFT = 260,
+        RIGHT = 261,
+
+};
+
+
 int main(int argc, char **argv)
 {
 
