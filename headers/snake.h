@@ -13,8 +13,9 @@ struct point {
 
 struct snake {
         struct point *bodyArray;
-        struct point *bodyVel;
         int bodyLen;
+        int xVel;
+        int yVel;
 };
 
 struct snake *createNewSnake();
