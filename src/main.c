@@ -1,5 +1,14 @@
 #include "../headers/main.h"
 
+enum usrKeys {
+        DOWN = 258,
+        UP = 259,
+        LEFT = 260,
+        RIGHT = 261,
+        QUIT = 'q'
+};
+
+
 int main(int argc, char **argv)
 {
 
@@ -31,17 +40,32 @@ int main(int argc, char **argv)
                 printSnake(playerSnake);
                 switch (getch())
                 {
-                //down arrow pressed
-                case 258:
-                //up arrow pressed
-                case 259:
-                //left arrow pressed
-                case 260:
-                //right arrow pressed
-                case 261:
+                case DOWN:
+                        if (playerSnake->yVel == -1)
+                                break;
+                        playerSnake->xVel = 0;
+                        playerSnake->yVel = 1;
+                        break;
+                case UP:
+                        if (playerSnake->yVel == 1)
+                                break;
+                        playerSnake->xVel = 0;
+                        playerSnake->yVel = -1;
+                        break;
+                case LEFT:
+                        if (playerSnake->xVel == 1)
+                                break;
+                        playerSnake->xVel = -1;
+                        playerSnake->yVel = 0;
+                        break;
+                case RIGHT:
+                        if (playerSnake->xVel == -1)
+                                break;
+                        playerSnake->xVel= 1;
+                        playerSnake->yVel = 0;
                         break;
 
-                case 'q':
+                case QUIT:
                         goto exit_success;
                         
                 }
