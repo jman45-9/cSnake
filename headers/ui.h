@@ -4,5 +4,6 @@
 #include <ncurses.h>
 
 void makeBorder();
+void printKillScreen();
 
 #endif /* CSNAKE_UI_HEADER_H */
