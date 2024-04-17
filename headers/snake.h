@@ -14,11 +14,14 @@ struct point {
 struct snake {
         struct point *bodyArray;
         int bodyLen;
+        int xVel;
+        int yVel;
 };
 
 struct snake *createNewSnake();
-void printSnake(struct snake *playerSnake);
 void addSegment(struct snake *playerSnake);
+void moveSnake(struct snake *playerSnake);
+void printSnake(struct snake *playerSnake);
 void delSnake(struct snake *playerSnake);
 
 #endif /* CSNAKE_SNAKESTRUCT_HEADER_H */

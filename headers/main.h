@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <string.h>
+#include <time.h>
 
 #include "cSnakeConfig.h"
 #include "ui.h"

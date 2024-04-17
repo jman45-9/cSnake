@@ -4,6 +4,9 @@ struct snake *createNewSnake()
 {
         struct snake *newSnake = malloc(sizeof(struct snake));
         newSnake->bodyArray = malloc(sizeof(struct point));
+
+        newSnake->xVel = 1;
+        newSnake->yVel = 0;
         newSnake->bodyLen = 0;
         struct point start = {20,20};
         *(newSnake->bodyArray) = start;
@@ -22,8 +25,19 @@ void addSegment(struct snake *playerSnake)
         struct point newPoint = *(storedBody+playerSnake->bodyLen-1);
         newPoint.x--;
         *(storedBody+playerSnake->bodyLen) = newPoint;
+
         playerSnake->bodyLen++;
         playerSnake->bodyArray = storedBody;
+}
+
+void moveSnake(struct snake *playerSnake)
+{
+        for(int iii = 1; iii < playerSnake->bodyLen; iii++) {
+                *(playerSnake->bodyArray + (playerSnake->bodyLen-iii)) = *(playerSnake->bodyArray + (playerSnake->bodyLen-iii-1));
+        }
+
+        (*(playerSnake->bodyArray)).x += playerSnake->xVel;
+        (*(playerSnake->bodyArray)).y += playerSnake->yVel;
 }
 
 
@@ -42,4 +56,5 @@ void delSnake(struct snake *playerSnake)
         free(playerSnake->bodyArray);
         free(playerSnake);
 }
+
 
