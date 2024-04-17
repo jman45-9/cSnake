@@ -47,6 +47,12 @@ int main(int argc, char **argv)
                 moveSnake(playerSnake);
 
                 refresh();
+
+                int delayTime = 100; //in milliseconds
+                struct timespec ts;
+                ts.tv_sec = delayTime / 1000;
+                ts.tv_nsec = (delayTime % 1000) * 1000000;
+                nanosleep(&ts, NULL);
         }
 exit_success:
         delSnake(playerSnake);
