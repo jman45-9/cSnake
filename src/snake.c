@@ -38,6 +38,15 @@ void addSegment(struct snake *playerSnake)
         playerSnake->bodyVel = bodyVel;
 }
 
+void moveSnake(struct snake *playerSnake)
+{
+        for(int iii = 1; iii < playerSnake->bodyLen; iii++) {
+                *(playerSnake->bodyArray + (playerSnake->bodyLen-iii)) = *(playerSnake->bodyArray + (playerSnake->bodyLen-iii-1));
+        }
+
+
+}
+
 
 void printSnake(struct snake *playerSnake)
 {
