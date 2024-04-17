@@ -23,10 +23,11 @@ int main(int argc, char **argv)
         
         struct snake *playerSnake = createNewSnake();
 
-        makeBorder();
 
         // Normal Control Loop
         while (1) {
+                erase();
+                makeBorder();
                 printSnake(playerSnake);
                 switch (getch())
                 {
@@ -44,6 +45,7 @@ int main(int argc, char **argv)
                         goto exit_success;
                         
                 }
+
                 moveSnake(playerSnake);
 
                 refresh();
