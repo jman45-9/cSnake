@@ -44,6 +44,7 @@ int main(int argc, char **argv)
                         goto exit_success;
                         
                 }
+                moveSnake(playerSnake);
 
                 refresh();
         }

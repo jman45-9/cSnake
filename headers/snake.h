@@ -19,6 +19,7 @@ struct snake {
 };
 
 struct snake *createNewSnake();
+void moveSnake(struct snake *playerSnake);
 void printSnake(struct snake *playerSnake);
 void addSegment(struct snake *playerSnake);
 void delSnake(struct snake *playerSnake);

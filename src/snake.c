@@ -36,7 +36,8 @@ void moveSnake(struct snake *playerSnake)
                 *(playerSnake->bodyArray + (playerSnake->bodyLen-iii)) = *(playerSnake->bodyArray + (playerSnake->bodyLen-iii-1));
         }
 
-
+        (*(playerSnake->bodyArray)).x += playerSnake->xVel;
+        (*(playerSnake->bodyArray)).y += playerSnake->yVel;
 }
 
 
