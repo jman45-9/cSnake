@@ -1,11 +1,11 @@
 #include "../headers/main.h"
 
-enum {
+enum usrKeys {
         DOWN = 258,
         UP = 259,
         LEFT = 260,
         RIGHT = 261,
-
+        QUIT = 'q'
 };
 
 
@@ -40,17 +40,13 @@ int main(int argc, char **argv)
                 printSnake(playerSnake);
                 switch (getch())
                 {
-                //down arrow pressed
-                case 258:
-                //up arrow pressed
-                case 259:
-                //left arrow pressed
-                case 260:
-                //right arrow pressed
-                case 261:
+                case DOWN:
+                case UP:
+                case LEFT:
+                case RIGHT:
                         break;
 
-                case 'q':
+                case QUIT:
                         goto exit_success;
                         
                 }
