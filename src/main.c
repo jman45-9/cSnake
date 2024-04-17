@@ -41,9 +41,28 @@ int main(int argc, char **argv)
                 switch (getch())
                 {
                 case DOWN:
+                        if (playerSnake->yVel == -1)
+                                break;
+                        playerSnake->xVel = 0;
+                        playerSnake->yVel = 1;
+                        break;
                 case UP:
+                        if (playerSnake->yVel == 1)
+                                break;
+                        playerSnake->xVel = 0;
+                        playerSnake->yVel = -1;
+                        break;
                 case LEFT:
+                        if (playerSnake->xVel == 1)
+                                break;
+                        playerSnake->xVel = -1;
+                        playerSnake->yVel = 0;
+                        break;
                 case RIGHT:
+                        if (playerSnake->xVel == -1)
+                                break;
+                        playerSnake->xVel= 1;
+                        playerSnake->yVel = 0;
                         break;
 
                 case QUIT:
