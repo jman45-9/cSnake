@@ -16,7 +16,7 @@ endif()
 find_package( Curses REQUIRED )
 include_directories( ${CURSES_INCLUDE_DIRS} )
 
-add_executable(cSnake src/main.c src/ui.c src/snake.c)
+add_executable(cSnake src/main.c src/ui.c src/snake.c src/apple.c)
 
 target_link_libraries(cSnake ${CURSES_LIBRARIES})
 

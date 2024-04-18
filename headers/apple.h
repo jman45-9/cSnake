@@ -1,0 +1,4 @@
+#ifndef CSNAKE_APPLE_HEADER_H
+#define CSNAKE_APPLE_HEADER_H
+
+#endif /* CSNAKE_APPLE_HEADER_H */
