@@ -34,7 +34,6 @@ int main(int argc, char **argv)
         refresh();
         getch();
 
-
         // Normal Control Loop
         while (1) {
                 erase();

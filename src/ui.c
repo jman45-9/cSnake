@@ -26,3 +26,11 @@ void printKillScreen()
         
 }
 
+void calcUImins(int *x, int *y)
+{
+        getmaxyx(stdscr, *y, *x);
+        *y = (*y - playSpaceHeight)/2;
+        *x = (*x - playSpaceWidth)/2;
+}
+
+
