@@ -18,10 +18,13 @@ void makeBorder()
 
 void printKillScreen()
 {
+        int UI_min_x = -1; // -1 is magic init
+        int UI_min_y = -1;
+        calcUImins(&UI_min_x, &UI_min_y);
         char killMsg[] = "GAME OVER!";
         int killMsgLen = 10;
-        int msgPosX = (playSpaceWidth - killMsgLen)/2;
-        int msgPosY = (playSpaceHeight - 1)/2;
+        int msgPosX = ((playSpaceWidth - killMsgLen)/2) + UI_min_x;
+        int msgPosY = ((playSpaceHeight - 1)/2) + UI_min_y;
 
         makeBorder();
         mvprintw(msgPosY, msgPosX, "%s", killMsg);
