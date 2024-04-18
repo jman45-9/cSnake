@@ -8,7 +8,11 @@ struct snake *createNewSnake()
         newSnake->xVel = 1;
         newSnake->yVel = 0;
         newSnake->bodyLen = 0;
-        struct point start = {10,10};
+
+        int UI_min_x = -1;
+        int UI_min_y = -1;
+        calcUImins(&UI_min_x, &UI_min_y);
+        struct point start = {(playSpaceWidth/2 + UI_min_x),(playSpaceHeight/2 + UI_min_y)};
         *(newSnake->bodyArray) = start;
         newSnake->bodyLen++;
 

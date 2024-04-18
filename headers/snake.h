@@ -5,6 +5,7 @@
 #include <ncurses.h>
 
 #include "../consts.h"
+#include "ui.h"
 
 #define SNAKE_START_LEN 4
 
