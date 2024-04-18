@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <ncurses.h>
 
+#include "../consts.h"
+
 #define SNAKE_START_LEN 4
 
 struct point {
@@ -21,6 +23,7 @@ struct snake {
 struct snake *createNewSnake();
 void addSegment(struct snake *playerSnake);
 void moveSnake(struct snake *playerSnake);
+int checkEdgeCollision(struct snake *playerSnake);
 void printSnake(struct snake *playerSnake);
 void delSnake(struct snake *playerSnake);
 

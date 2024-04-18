@@ -40,6 +40,16 @@ void moveSnake(struct snake *playerSnake)
         (*(playerSnake->bodyArray)).y += playerSnake->yVel;
 }
 
+int checkEdgeCollision(struct snake *playerSnake)
+{
+        struct point headPoint = *(playerSnake->bodyArray);
+        if (headPoint.x == 0 || headPoint.x == playSpaceWidth)
+                return 1;
+        if (headPoint.y == 0 || headPoint.y == playSpaceHeight)
+                return 1;
+        return 0;
+}
+
 
 void printSnake(struct snake *playerSnake)
 {

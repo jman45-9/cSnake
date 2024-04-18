@@ -73,6 +73,8 @@ int main(int argc, char **argv)
                 }
 
                 moveSnake(playerSnake);
+                if (checkEdgeCollision(playerSnake))
+                        goto game_over;
 
                 refresh();
 
@@ -82,6 +84,15 @@ int main(int argc, char **argv)
                 ts.tv_nsec = (delayTime % 1000) * 1000000;
                 nanosleep(&ts, NULL);
         }
+game_over:
+        printKillScreen();
+        refresh();
+        while(1) {
+                if (getch() != -1)
+                        break;
+        }
+
+
 exit_success:
         delSnake(playerSnake);
         endwin();

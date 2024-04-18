@@ -15,14 +15,10 @@ void makeBorder()
 
 void printKillScreen()
 {
-        int screenWidth = 80;
-        int screenHeight = 24;
-
-
         char killMsg[] = "GAME OVER!";
         int killMsgLen = 10;
-        int msgPosX = (screenWidth - killMsgLen)/2;
-        int msgPosY = (screenHeight - 1)/2;
+        int msgPosX = (playSpaceWidth - killMsgLen)/2;
+        int msgPosY = (playSpaceHeight - 1)/2;
 
         makeBorder();
         mvprintw(msgPosY, msgPosX, "%s", killMsg);
