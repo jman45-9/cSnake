@@ -24,6 +24,7 @@ struct snake *createNewSnake();
 void addSegment(struct snake *playerSnake);
 void moveSnake(struct snake *playerSnake);
 int checkEdgeCollision(struct snake *playerSnake);
+int checkSelfCollision(struct snake *playerSnake);
 void printSnake(struct snake *playerSnake);
 void delSnake(struct snake *playerSnake);
 

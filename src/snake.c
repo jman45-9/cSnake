@@ -50,6 +50,20 @@ int checkEdgeCollision(struct snake *playerSnake)
         return 0;
 }
 
+int checkSelfCollision(struct snake *playerSnake)
+{
+        struct point headPoint = *(playerSnake->bodyArray);
+
+        for (int iii = 1; iii < playerSnake->bodyLen; iii++) {
+                if (headPoint.y == (*(playerSnake->bodyArray + iii)).y)
+                        if (headPoint.x == (*(playerSnake->bodyArray + iii)).x)
+                                        return 1;
+        }
+        return 0;
+
+}
+
+
 
 void printSnake(struct snake *playerSnake)
 {

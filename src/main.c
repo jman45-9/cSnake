@@ -73,7 +73,7 @@ int main(int argc, char **argv)
                 }
 
                 moveSnake(playerSnake);
-                if (checkEdgeCollision(playerSnake))
+                if (checkEdgeCollision(playerSnake) || checkSelfCollision(playerSnake))
                         goto game_over;
 
                 refresh();
