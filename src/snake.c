@@ -8,7 +8,11 @@ struct snake *createNewSnake()
         newSnake->xVel = 1;
         newSnake->yVel = 0;
         newSnake->bodyLen = 0;
-        struct point start = {20,20};
+
+        int UI_min_x = -1; // -1 is magic init
+        int UI_min_y = -1;
+        calcUImins(&UI_min_x, &UI_min_y);
+        struct point start = {(playSpaceWidth/2 + UI_min_x),(playSpaceHeight/2 + UI_min_y)};
         *(newSnake->bodyArray) = start;
         newSnake->bodyLen++;
 
@@ -42,10 +46,13 @@ void moveSnake(struct snake *playerSnake)
 
 int checkEdgeCollision(struct snake *playerSnake)
 {
+        int UI_min_x = -1; // -1 is magic init
+        int UI_min_y = -1;
+        calcUImins(&UI_min_x, &UI_min_y);
         struct point headPoint = *(playerSnake->bodyArray);
-        if (headPoint.x == 0 || headPoint.x == playSpaceWidth)
+        if (headPoint.x == UI_min_x || headPoint.x == playSpaceWidth + UI_min_x)
                 return 1;
-        if (headPoint.y == 0 || headPoint.y == playSpaceHeight)
+        if (headPoint.y == UI_min_y || headPoint.y == playSpaceHeight + UI_min_y)
                 return 1;
         return 0;
 }

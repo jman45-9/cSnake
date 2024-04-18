@@ -6,5 +6,6 @@
 
 void makeBorder();
 void printKillScreen();
+void calcUImins(int *x, int *y);
 
 #endif /* CSNAKE_UI_HEADER_H */
