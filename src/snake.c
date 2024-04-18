@@ -8,7 +8,7 @@ struct snake *createNewSnake()
         newSnake->xVel = 1;
         newSnake->yVel = 0;
         newSnake->bodyLen = 0;
-        struct point start = {20,20};
+        struct point start = {10,10};
         *(newSnake->bodyArray) = start;
         newSnake->bodyLen++;
 
