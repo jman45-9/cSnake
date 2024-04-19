@@ -31,12 +31,20 @@ int main(int argc, char **argv)
         
         struct snake *playerSnake = createNewSnake();
 
-        refresh();
-        getch();
+        int applePresent = 0;
+        struct point applePos;
 
         // Normal Control Loop
         while (1) {
                 erase();
+                if (!applePresent) {
+                        applePos = placeNewApple();
+                        applePresent = 1;
+                } else {
+                        mvaddch(applePos.y, applePos.x, 'a');
+                }
+
+
                 makeBorder();
                 printSnake(playerSnake);
                 switch (getch())
@@ -75,13 +83,21 @@ int main(int argc, char **argv)
                 if (checkEdgeCollision(playerSnake) || checkSelfCollision(playerSnake))
                         goto game_over;
 
+                if ((*(playerSnake->bodyArray)).x == applePos.x && (*playerSnake->bodyArray).y == applePos.y) {
+                        addSegment(playerSnake);
+                        applePresent = 0;
+                }
+
+
                 refresh();
 
+                
                 int delayTime = 100; //in milliseconds
                 struct timespec ts;
                 ts.tv_sec = delayTime / 1000;
                 ts.tv_nsec = (delayTime % 1000) * 1000000;
                 nanosleep(&ts, NULL);
+                
         }
 game_over:
         printKillScreen();
