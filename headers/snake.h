@@ -6,13 +6,10 @@
 
 #include "../consts.h"
 #include "ui.h"
+#include "point.h"
 
 #define SNAKE_START_LEN 4
 
-struct point {
-        int x;
-        int y;
-};
 
 struct snake {
         struct point *bodyArray;
