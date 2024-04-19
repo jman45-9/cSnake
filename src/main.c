@@ -83,6 +83,12 @@ int main(int argc, char **argv)
                 if (checkEdgeCollision(playerSnake) || checkSelfCollision(playerSnake))
                         goto game_over;
 
+                if ((*(playerSnake->bodyArray)).x == applePos.x && (*playerSnake->bodyArray).y == applePos.y) {
+                        addSegment(playerSnake);
+                        applePresent = 0;
+                }
+
+
                 refresh();
 
                 
