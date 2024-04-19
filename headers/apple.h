@@ -6,7 +6,8 @@
 #include <ncurses.h>
 #include "../consts.h"
 #include "ui.h"
+#include "point.h"
 
-void placeNewApple();
+struct point placeNewApple();
 
 #endif /* CSNAKE_APPLE_HEADER_H */

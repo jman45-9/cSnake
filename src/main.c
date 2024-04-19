@@ -31,10 +31,20 @@ int main(int argc, char **argv)
         
         struct snake *playerSnake = createNewSnake();
 
+        int applePresent = 0;
+        struct point applePos;
+
         // Normal Control Loop
         while (1) {
                 erase();
-                placeNewApple();
+                if (!applePresent) {
+                        applePos = placeNewApple();
+                        applePresent = 1;
+                } else {
+                        mvaddch(applePos.y, applePos.x, 'a');
+                }
+
+
                 makeBorder();
                 printSnake(playerSnake);
                 switch (getch())

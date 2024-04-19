@@ -1,6 +1,6 @@
 #include "../headers/apple.h"
 
-void placeNewApple()
+struct point placeNewApple()
 {
         char const appleChar = 'a';
         int UI_min_x = -1; // -1 is magic initializer
@@ -15,4 +15,6 @@ void placeNewApple()
         int yPosMin = UI_min_y;
         int yPos = (rand() % (yPosMax - yPosMin))+yPosMin+1;
         mvaddch(yPos, xPos, appleChar);
+        struct point ret = {xPos, yPos};
+        return ret;
 }
