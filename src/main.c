@@ -31,12 +31,10 @@ int main(int argc, char **argv)
         
         struct snake *playerSnake = createNewSnake();
 
-        refresh();
-        getch();
-
         // Normal Control Loop
         while (1) {
                 erase();
+                placeNewApple();
                 makeBorder();
                 printSnake(playerSnake);
                 switch (getch())
@@ -77,11 +75,13 @@ int main(int argc, char **argv)
 
                 refresh();
 
+                
                 int delayTime = 100; //in milliseconds
                 struct timespec ts;
                 ts.tv_sec = delayTime / 1000;
                 ts.tv_nsec = (delayTime % 1000) * 1000000;
                 nanosleep(&ts, NULL);
+                
         }
 game_over:
         printKillScreen();
