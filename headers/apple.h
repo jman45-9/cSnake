@@ -7,7 +7,6 @@
 #include "../consts.h"
 #include "ui.h"
 #include "point.h"
-#include "snake.h"
 
 struct point placeNewApple();
 
