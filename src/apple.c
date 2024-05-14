@@ -9,11 +9,11 @@ struct point placeNewApple()
         srand(time(0));
         int xPosMax = UI_min_x + playSpaceWidth;
         int xPosMin = UI_min_x;
-        int xPos = (rand() % (xPosMax-xPosMin))+xPosMin+1;
+        int xPos = (rand() % (xPosMax-xPosMin-1))+xPosMin+1;
 
         int yPosMax = UI_min_y +playSpaceHeight;
         int yPosMin = UI_min_y;
-        int yPos = (rand() % (yPosMax - yPosMin))+yPosMin+1;
+        int yPos = (rand() % ((yPosMax - yPosMin)-1))+yPosMin+1;
         mvaddch(yPos, xPos, appleChar);
         struct point ret = {xPos, yPos};
         return ret;

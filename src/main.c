@@ -37,6 +37,8 @@ int main(int argc, char **argv)
         // Normal Control Loop
         while (1) {
                 erase();
+
+                makeBorder();
                 if (!applePresent) {
                         applePos = placeNewApple();
                         applePresent = 1;
@@ -45,7 +47,6 @@ int main(int argc, char **argv)
                 }
 
 
-                makeBorder();
                 printSnake(playerSnake);
                 switch (getch())
                 {
